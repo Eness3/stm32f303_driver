@@ -216,7 +216,16 @@ typedef struct{
 
 //----------------------------------------------------------------------------
 
+/*****************************************************************************
+ * 					Macros to reset GPIO peripherals
+ */
+#define GPIOA_REG_RST()   do { (RCC->AHBRSTR |= (1<<17));   (RCC->AHBRSTR &= ~(1<<17));}while(0)
+#define GPIOB_REG_RST()   do { (RCC->AHBRSTR |= (1<<18));   (RCC->AHBRSTR &= ~(1<<18));}while(0)
+#define GPIOC_REG_RST()   do { (RCC->AHBRSTR |= (1<<19));   (RCC->AHBRSTR &= ~(1<<19));}while(0)
+#define GPIOD_REG_RST()   do { (RCC->AHBRSTR |= (1<<20));   (RCC->AHBRSTR &= ~(1<<20));}while(0)
+#define GPIOF_REG_RST()   do { (RCC->AHBRSTR |= (1<<22));   (RCC->AHBRSTR &= ~(1<<22));}while(0)
 
+//----------------------------------------------------------------------------
 
 /*****************************************************************************
  * 							Some Generic Macros
